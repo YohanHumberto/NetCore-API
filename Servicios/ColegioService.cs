@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CursoEFCore.Servicios
 {
-    public class ColegioService
+    public class ColegioService: IColegioService
     {
         private readonly IContextDB _ContextDb;
 

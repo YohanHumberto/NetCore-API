@@ -1,6 +1,5 @@
 ﻿using CursoEFCore.Modelos;
 using CursoEFCore.Servicios;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -16,35 +15,78 @@ namespace CursoEFCore.Controllers
 
         public AlumnoController(IAlumnoService alumnoService)
         {
-            this._AlumnoService = alumnoService;    
+            this._AlumnoService = alumnoService;
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetAllAlumnos()
-        //{
-        //    return Ok(_AlumnoService.GetAllAlumno());
-        //}
+        /// <summary>
+        /// Este EndPoint retorna todos los Alumnos
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetAllAlumnos()
+        {
+            return Ok(_AlumnoService.GetAllAlumno());
+        }
 
         [HttpGet]
-        public List<Alumno> GetAlumnoById()
+        [Route("{IdAlumno:int}")]
+        public IActionResult GetAlumnoById(int IdAlumno)
         {
-            return _AlumnoService.GetAllAlumno();
+            return Ok(_AlumnoService.GetByIdAlumno(IdAlumno));
         }
 
-        //public List<Alumno> AddAlumnos()
-        //{
-        //    return _AlumnoService.GetAllAlumno();
-        //}
+        [HttpPost]
+        public IActionResult AddAlumnos([FromForm] Alumno alumno)
+        {
 
-        //public List<Alumno> UpdateAlumnos()
-        //{
-        //    return _AlumnoService.GetAllAlumno();
-        //} 
+            ResStruct res = new ResStruct()
+            {
+                Estado = true,
+                MSG = "Alumno agregado con exito."
+            };
 
-        //public List<Alumno> DeleteAlumnos()
-        //{
-        //    return _AlumnoService.GetAllAlumno();
-        //}
+            if (alumno.Nombre != "" && alumno.Apellido != "" && alumno.Edad != 0) _AlumnoService.AddAlumno(alumno);
+            else { res.Estado = false; res.MSG = "LAS PROPIEDADES NO PUEDEN ESTAR VACIAS."; }
 
+            return Ok(new { res.Estado, res.MSG });
+        }
+
+        [HttpPut]
+        public IActionResult UpdateAlumnos(Alumno alumno)
+        {
+
+            ResStruct res = new ResStruct()
+            {
+                Estado = true,
+                MSG = "Alumno actualizado con exito."
+            };
+
+            if (alumno.Nombre != "" && alumno.Apellido != "" && alumno.Edad != 0) _AlumnoService.UpdateAlumno(alumno);
+            else { res.Estado = false; res.MSG = "LAS PROPIEDADES NO PUEDEN ESTAR VACIAS."; }
+
+            return Ok(new { res.Estado, res.MSG });
+
+        }
+
+        [HttpDelete("{IdAlumno:int}")]
+        public IActionResult DeleteAlumnos(int IdAlumno)
+        {
+            try
+            {
+                _AlumnoService.DeleteAlumno(IdAlumno);
+                return Ok(new { Estado = true, MSG = "Alumno eliminado con exito." });
+            }
+            catch (System.Exception e)
+            {
+                return Ok(new { Estado = false, MSG ="ERROR... NO se pudo eliminar el alumno", exec=  e.Message });
+            }
+        }
+
+    }
+
+    class ResStruct
+    {
+        public bool Estado;
+        public string MSG;
     }
 }

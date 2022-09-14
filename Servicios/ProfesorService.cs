@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CursoEFCore.Servicios
 {
-    public class ProfesorService
+    public class ProfesorService: IProfesorService
     {
         private readonly IContextDB _ContextDb;
 
@@ -14,29 +14,29 @@ namespace CursoEFCore.Servicios
             this._ContextDb = contextDB;
         }
 
-        public List<Profesor> GetAllProfesores()
+        public List<Profesor> GetAllProfesor()
         {
             return _ContextDb.Profesores.ToList();
         }
 
-        public Profesor GetByIdProfesores(int IdProfesores)
+        public Profesor GetByIdProfesor(int IdProfesores)
         {
             return _ContextDb.Profesores.Where(item => item.ProfesorId == IdProfesores).FirstOrDefault();
         }
 
-        public void AddProfesores(Profesor Profesores)
+        public void AddProfesor(Profesor Profesores)
         {
             _ContextDb.Profesores.Add(Profesores);
             _ContextDb.SaveChanges(true);
         }
 
-        public void UpdateProfesores(Profesor Profesores)
+        public void UpdateProfesor(Profesor Profesores)
         {
             _ContextDb.Profesores.Update(Profesores);
             _ContextDb.SaveChanges(true);
         }
 
-        public void DeleteProfesores(int IdProfesores)
+        public void DeleteProfesor(int IdProfesores)
         {
             Profesor Profesores = _ContextDb.Profesores.Where(item => item.ProfesorId == IdProfesores).FirstOrDefault();
             _ContextDb.Profesores.Remove(Profesores);
