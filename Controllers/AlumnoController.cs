@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace CursoEFCore.Controllers
 {
+
+    /// <summary>
+    /// Este es el controlador de alumnos
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class AlumnoController : ControllerBase
     {
 
-        public IAlumnoService _AlumnoService;
+        private IAlumnoService _AlumnoService;
 
+        /// <summary>
+        /// Este es el constructor de la clase AlumnoController
+        /// </summary>
+        /// <param name="alumnoService"></param>
         public AlumnoController(IAlumnoService alumnoService)
         {
             this._AlumnoService = alumnoService;
@@ -28,6 +36,11 @@ namespace CursoEFCore.Controllers
             return Ok(_AlumnoService.GetAllAlumno());
         }
 
+        /// <summary>
+        /// Este EndPoint retorna un alumno por su ID
+        /// </summary>
+        /// <param name="IdAlumno"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{IdAlumno:int}")]
         public IActionResult GetAlumnoById(int IdAlumno)
@@ -35,6 +48,11 @@ namespace CursoEFCore.Controllers
             return Ok(_AlumnoService.GetByIdAlumno(IdAlumno));
         }
 
+        /// <summary>
+        /// Este EndPoint Agrega un nuevo alumno
+        /// </summary>
+        /// <param name="alumno"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddAlumnos([FromForm] Alumno alumno)
         {
@@ -51,6 +69,11 @@ namespace CursoEFCore.Controllers
             return Ok(new { res.Estado, res.MSG });
         }
 
+        /// <summary>
+        /// Este EntPoint actualiza un alumno
+        /// </summary>
+        /// <param name="alumno"></param>
+        /// <returns></returns>
         [HttpPut]
         public IActionResult UpdateAlumnos(Alumno alumno)
         {
@@ -68,6 +91,11 @@ namespace CursoEFCore.Controllers
 
         }
 
+        /// <summary>
+        /// Este EndPoint elimina un alumno por el ID
+        /// </summary>
+        /// <param name="IdAlumno"></param>
+        /// <returns></returns>
         [HttpDelete("{IdAlumno:int}")]
         public IActionResult DeleteAlumnos(int IdAlumno)
         {

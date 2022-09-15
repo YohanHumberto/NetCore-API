@@ -32,6 +32,18 @@ namespace CursoEFCore
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+            // Agregamos los servicios
+            services.AddTransient<IContextDB, ContextDB>();
+            services.AddTransient<IColegioService, ColegioService>();
+            services.AddTransient<IClaseService, ClaseService>();
+            services.AddTransient<IProfesorService, ProfesorService>();
+            services.AddTransient<IAlumnoService, AlumnoService>();
+
+            // Agregamos el conexto
+            services.AddDbContext<ContextDB>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllers();
+
             // Configuramos swagger
             services.AddSwaggerGen(c =>
             {
@@ -48,17 +60,7 @@ namespace CursoEFCore
                 c.IncludeXmlComments(xmlPath);
 
             });
-
-            // Agregamos los servicios
-            services.AddTransient<IContextDB, ContextDB>();
-            services.AddTransient<IColegioService, ColegioService>();
-            services.AddTransient<IClaseService, ClaseService>();
-            services.AddTransient<IProfesorService, ProfesorService>();
-            services.AddTransient<IAlumnoService, AlumnoService>();
-
-            // Agregamos el conexto
-            services.AddDbContext<ContextDB>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers();
+            services.AddApplicationInsightsTelemetry();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

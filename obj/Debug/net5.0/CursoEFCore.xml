@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CursoEFCore</name>
+    </assembly>
+    <members>
+        <member name="T:CursoEFCore.Controllers.AlumnoController">
+            <summary>
+            Este es el controlador de alumnos
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Controllers.AlumnoController.#ctor(CursoEFCore.Servicios.IAlumnoService)">
+            <summary>
+            Este es el constructor de la clase AlumnoController
+            </summary>
+            <param name="alumnoService"></param>
+        </member>
+        <member name="M:CursoEFCore.Controllers.AlumnoController.GetAllAlumnos">
+            <summary>
+            Este EndPoint retorna todos los Alumnos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.AlumnoController.GetAlumnoById(System.Int32)">
+            <summary>
+            Este EndPoint retorna un alumno por su ID
+            </summary>
+            <param name="IdAlumno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.AlumnoController.AddAlumnos(CursoEFCore.Modelos.Alumno)">
+            <summary>
+            Este EndPoint Agrega un nuevo alumno
+            </summary>
+            <param name="alumno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.AlumnoController.UpdateAlumnos(CursoEFCore.Modelos.Alumno)">
+            <summary>
+            Este EntPoint actualiza un alumno
+            </summary>
+            <param name="alumno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.AlumnoController.DeleteAlumnos(System.Int32)">
+            <summary>
+            Este EndPoint elimina un alumno por el ID
+            </summary>
+            <param name="IdAlumno"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CursoEFCore.Controllers.ClaseController">
+            <summary>
+            Este es el controlador de Clase
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ClaseController.#ctor(CursoEFCore.Servicios.IClaseService)">
+            <summary>
+            Este es el constructor de la clase ClaseController
+            </summary>
+            <param name="claseService"></param>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ClaseController.GetAllClasees">
+            <summary>
+            Este EndPoint retorna todos los Clases
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ClaseController.GetClaseById(System.Int32)">
+            <summary>
+            Este EndPoint retorna un Clase por su ID
+            </summary>
+            <param name="IdClase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ClaseController.AddClasees(CursoEFCore.Modelos.Clase)">
+            <summary>
+            Este EndPoint Agrega un nuevo Clase
+            </summary>
+            <param name="clase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ClaseController.UpdateClasees(CursoEFCore.Modelos.Clase)">
+            <summary>
+            Este EntPoint actualiza un Clase
+            </summary>
+            <param name="clase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ClaseController.DeleteClasees(System.Int32)">
+            <summary>
+            Este EndPoint elimina un Clase por el ID
+            </summary>
+            <param name="IdClase"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CursoEFCore.Controllers.ColegioController">
+            <summary>
+            Este es el controlador de Colegio
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ColegioController.#ctor(CursoEFCore.Servicios.IColegioService)">
+            <summary>
+            Este es el constructor de la clase ColegioController
+            </summary>
+            <param name="colegioService"></param>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ColegioController.GetAllColegio">
+            <summary>
+            Este EndPoint retorna todos los Colegio
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ColegioController.GetColegioById(System.Int32)">
+            <summary>
+            Este EndPoint retorna un Colegio por su ID
+            </summary>
+            <param name="IdColegio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ColegioController.AddColegio(CursoEFCore.Modelos.Colegio)">
+            <summary>
+            Este EndPoint Agrega un nuevo Colegio
+            </summary>
+            <param name="Colegio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ColegioController.UpdateColegio(CursoEFCore.Modelos.Colegio)">
+            <summary>
+            Este EntPoint actualiza un Colegio
+            </summary>
+            <param name="Colegio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ColegioController.DeleteColegio(System.Int32)">
+            <summary>
+            Este EndPoint elimina un Colegio por el ID
+            </summary>
+            <param name="IdColegio"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CursoEFCore.Controllers.ProfesorController">
+            <summary>
+            Este es el controlador de profesor
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ProfesorController.#ctor(CursoEFCore.Servicios.IProfesorService)">
+            <summary>
+            Este es el constructor de la clase ProfesorController
+            </summary>
+            <param name="profesorService"></param>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ProfesorController.GetAllprofesores">
+            <summary>
+            Este EndPoint retorna todos los profesores
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ProfesorController.GetProfesorById(System.Int32)">
+            <summary>
+            Este EndPoint retorna un profesor por su ID
+            </summary>
+            <param name="IdProfesor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ProfesorController.AddProfesores(CursoEFCore.Modelos.Profesor)">
+            <summary>
+            Este EndPoint Agrega un nuevo profesor
+            </summary>
+            <param name="profesor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ProfesorController.UpdateProfesores(CursoEFCore.Modelos.Profesor)">
+            <summary>
+            Este EntPoint actualiza un profesor
+            </summary>
+            <param name="profesor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Controllers.ProfesorController.DeleteProfesores(System.Int32)">
+            <summary>
+            Este EndPoint elimina un profesor por el ID
+            </summary>
+            <param name="IdProfesor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CursoEFCore.Servicios.AlumnoService">
+            <summary>
+            Este es un servicio de BD para los Alumnos
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Servicios.AlumnoService.#ctor(CursoEFCore.Contexto.IContextDB)">
+            <summary>
+            Este es el contructo de la clase
+            </summary>
+            <param name="contextDB"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.AlumnoService.GetAllAlumno">
+            <summary>
+            Retorna todo los alumnos 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.AlumnoService.GetByIdAlumno(System.Int32)">
+            <summary>
+            Retorna un alumno por su ID
+            </summary>
+            <param name="IdAlumno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.AlumnoService.AddAlumno(CursoEFCore.Modelos.Alumno)">
+            <summary>
+            Agrega un alumno
+            </summary>
+            <param name="Alumno"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.AlumnoService.UpdateAlumno(CursoEFCore.Modelos.Alumno)">
+            <summary>
+            Actualiza eun alumno
+            </summary>
+            <param name="Alumno"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.AlumnoService.DeleteAlumno(System.Int32)">
+            <summary>
+            Elimina un alumno por su ID
+            </summary>
+            <param name="IdAlumno"></param>
+        </member>
+        <member name="T:CursoEFCore.Servicios.ClaseService">
+            <summary>
+            Este es un servicio de  DB para las clases
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ClaseService.#ctor(CursoEFCore.Contexto.IContextDB)">
+            <summary>
+            Este es el contructor de esta clase
+            </summary>
+            <param name="contextDB"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ClaseService.GetAllClase">
+            <summary>
+            Retorna todos las clases
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ClaseService.GetByIdClase(System.Int32)">
+            <summary>
+            Retorna una clase por el ID
+            </summary>
+            <param name="IdClase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ClaseService.AddClase(CursoEFCore.Modelos.Clase)">
+            <summary>
+            Agrega una nueva clase
+            </summary>
+            <param name="Clase"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ClaseService.UpdateClase(CursoEFCore.Modelos.Clase)">
+            <summary>
+            Actualiza una clase 
+            </summary>
+            <param name="Clase"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ClaseService.DeleteClase(System.Int32)">
+            <summary>
+            Elimina una clase por su ID
+            </summary>
+            <param name="IdClase"></param>
+        </member>
+        <member name="T:CursoEFCore.Servicios.ColegioService">
+            <summary>
+            Este es un servicio de  DB para los colegios
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ColegioService.#ctor(CursoEFCore.Contexto.IContextDB)">
+            <summary>
+            Este es el contructor de la clase
+            </summary>
+            <param name="contextDB"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ColegioService.GetAllColegio">
+            <summary>
+            Retorna todos los colegios
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ColegioService.GetByIdColegio(System.Int32)">
+            <summary>
+            Retorna un colegio por el ID
+            </summary>
+            <param name="IdColegio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ColegioService.AddColegio(CursoEFCore.Modelos.Colegio)">
+            <summary>
+            Agrega un nuevo colegio
+            </summary>
+            <param name="Colegio"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ColegioService.UpdateColegio(CursoEFCore.Modelos.Colegio)">
+            <summary>
+            Actualiza un colegio
+            </summary>
+            <param name="Colegio"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ColegioService.DeleteColegio(System.Int32)">
+            <summary>
+            Elimina un colegio
+            </summary>
+            <param name="IdColegio"></param>
+        </member>
+        <member name="T:CursoEFCore.Servicios.ProfesorService">
+            <summary>
+            Este es un servicio de DB par los Profesores
+            </summary>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ProfesorService.#ctor(CursoEFCore.Contexto.IContextDB)">
+            <summary>
+            Este es el contructor
+            </summary>
+            <param name="contextDB"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ProfesorService.GetAllProfesor">
+            <summary>
+            Retorna todos los profesores
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ProfesorService.GetByIdProfesor(System.Int32)">
+            <summary>
+            Retorna un profesor por ID
+            </summary>
+            <param name="IdProfesores"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ProfesorService.AddProfesor(CursoEFCore.Modelos.Profesor)">
+            <summary>
+            Agrega un nuevo profesor 
+            </summary>
+            <param name="Profesores"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ProfesorService.UpdateProfesor(CursoEFCore.Modelos.Profesor)">
+            <summary>
+            Actualiza un profesor
+            </summary>
+            <param name="Profesores"></param>
+        </member>
+        <member name="M:CursoEFCore.Servicios.ProfesorService.DeleteProfesor(System.Int32)">
+            <summary>
+            Elimina un profesor por el ID
+            </summary>
+            <param name="IdProfesores"></param>
+        </member>
+    </members>
+</doc>
